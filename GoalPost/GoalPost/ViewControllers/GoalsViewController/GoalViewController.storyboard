@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XJ-Y9-AFW">
-                                        <rect key="frame" x="149" y="37" width="77" height="25"/>
+                                        <rect key="frame" x="149" y="33" width="77" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeY-RO-09e">
                                                 <rect key="frame" x="0.0" y="0.0" width="39.5" height="25"/>
@@ -43,31 +43,79 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srY-8Y-DdO">
-                                        <rect key="frame" x="329" y="34" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srY-8Y-DdO">
+                                        <rect key="frame" x="325" y="29" width="35" height="32"/>
+                                        <state key="normal" image="addGoal"/>
+                                        <connections>
+                                            <action selector="addButtonWasTapped:" destination="fYF-SW-TXF" eventType="touchUpInside" id="vTs-9m-gvs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098039215684" green="0.73725490196078436" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="srY-8Y-DdO" secondAttribute="trailing" constant="15" id="72H-LR-ucc"/>
+                                    <constraint firstItem="srY-8Y-DdO" firstAttribute="centerY" secondItem="3XJ-Y9-AFW" secondAttribute="centerY" id="8Ae-lm-OSu"/>
                                     <constraint firstItem="3XJ-Y9-AFW" firstAttribute="centerX" secondItem="Hgg-R7-hfR" secondAttribute="centerX" id="dyP-vZ-lsX"/>
                                     <constraint firstAttribute="height" constant="70" id="krG-Nf-ZLU"/>
-                                    <constraint firstAttribute="bottom" secondItem="3XJ-Y9-AFW" secondAttribute="bottom" constant="8" id="lrD-YU-7Zl"/>
+                                    <constraint firstAttribute="bottom" secondItem="3XJ-Y9-AFW" secondAttribute="bottom" constant="12" id="lrD-YU-7Zl"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-67-Btd">
+                                <rect key="frame" x="68.5" y="145" width="238.5" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Goalpost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-z7-TZi">
+                                        <rect key="frame" x="0.0" y="0.0" width="238.5" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To begin, create a goal." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhX-Sf-f0o">
+                                        <rect key="frame" x="0.0" y="33" width="238.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oz6-L9-pnU">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="QJr-oY-IoW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QJr-oY-IoW" id="GlP-JM-fqz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Hgg-R7-hfR" firstAttribute="top" secondItem="aW1-f6-ojj" secondAttribute="top" id="8Cs-AB-RkV"/>
                             <constraint firstItem="DAp-PF-t2S" firstAttribute="trailing" secondItem="Hgg-R7-hfR" secondAttribute="trailing" id="90Z-51-qx5"/>
+                            <constraint firstItem="oz6-L9-pnU" firstAttribute="top" secondItem="Hgg-R7-hfR" secondAttribute="bottom" id="AV4-rm-zXs"/>
+                            <constraint firstItem="oz6-L9-pnU" firstAttribute="trailing" secondItem="DAp-PF-t2S" secondAttribute="trailing" id="DW8-AX-orw"/>
+                            <constraint firstItem="gfI-67-Btd" firstAttribute="centerX" secondItem="aW1-f6-ojj" secondAttribute="centerX" id="HH3-IQ-Njg"/>
+                            <constraint firstItem="gfI-67-Btd" firstAttribute="top" secondItem="Hgg-R7-hfR" secondAttribute="bottom" constant="75" id="NIH-HX-f0g"/>
+                            <constraint firstItem="oz6-L9-pnU" firstAttribute="bottom" secondItem="DAp-PF-t2S" secondAttribute="bottom" id="QVI-bo-VJ4"/>
+                            <constraint firstItem="oz6-L9-pnU" firstAttribute="leading" secondItem="DAp-PF-t2S" secondAttribute="leading" id="ZIL-Md-7tk"/>
                             <constraint firstItem="Hgg-R7-hfR" firstAttribute="leading" secondItem="DAp-PF-t2S" secondAttribute="leading" id="i1m-uV-0ug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DAp-PF-t2S"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="oz6-L9-pnU" id="m06-hO-eyB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHQ-Ug-8Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="504.80000000000001" y="-218.1409295352324"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addGoal" width="35" height="32"/>
+    </resources>
 </document>
